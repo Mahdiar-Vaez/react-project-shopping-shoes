@@ -1,0 +1,47 @@
+.swipper-div{
+    padding: 30px 10%;
+}
+.text-content{
+    padding: 30px 10%;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .swiper-slide div {
+    display: block;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+  button{
+    width: 60px;
+    height: 60px;
+    font: 500;
+  }
+  .cart-btn{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 10px;
+    
+  }
