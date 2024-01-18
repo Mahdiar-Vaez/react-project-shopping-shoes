@@ -1,0 +1,10 @@
+.overlay{
+    top: 0;
+    left: 0;
+    position: absolute;
+     background: linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(88,15,82,1) 54%);;
+     height: 100%;
+     width: 100%;
+     z-index: 1;
+     border-radius:24px;
+}

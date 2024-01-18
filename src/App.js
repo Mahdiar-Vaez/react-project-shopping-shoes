@@ -11,7 +11,7 @@ import ProductDetails from './Pages/productDetails'
 import PageNotFound from './Pages/404'
 import Contact from './Pages/Contact/Contact'
 export default function App() {
-  const [token,setToken]=useState('sfdgt')
+  const [token,setToken]=useState('')
   const handleToken=(x)=>{
     setToken(x)
   }
