@@ -1,55 +1,68 @@
+import { Box, TextField, Typography,Button } from '@mui/material'
+import { motion } from 'framer-motion'
 import React from 'react'
 
 export default function Register({handlePageType}) {
   return (
-    <div> <div class="container">
-    <div class="screen">
-      <div class="screen__content">
-        <form class="login">
-          <div class="login__field">
-            <i class="login__icon fas fa-user"></i>
-            <input
-              type="text"
-             
-              name="username"
-              class="login__input"
-              placeholder="User name / Email"
-            />
-          </div>
-          <div class="login__field">
-            <i class="login__icon fas fa-lock"></i>
-            <input
-              type="password"
-              name="password"
-            
-              id="pass-inp"
-              class="login__input"
-              placeholder="Password"
-            />
-          </div>
-          <button  class="button login__submit">
-           Register now
-          </button>
-          <h3 onClick={handlePageType}> already have account ? </h3>
-        </form>
-        <div class="social-login">
-          <h3>Pls Register</h3>
-          
-          <div class="social-icons">
-            <a href="#" class="social-login__icon fab fa-instagram"></a>
-            <a href="#" class="social-login__icon fab fa-facebook"></a>
-            <a href="#" class="social-login__icon fab fa-twitter"></a>
-          </div>
-        </div>
-      </div>
-      <div class="screen__background">
-        <span class="screen__background__shape screen__background__shape4"></span>
-        <span class="screen__background__shape screen__background__shape3"></span>
-        <span class="screen__background__shape screen__background__shape2"></span>
-        <span class="screen__background__shape screen__background__shape1"></span>
-      </div>
-    </div>
-  </div>
-  </div>
+    <motion.div initial={
+      {
+        x:-400,
+       
+        opacity:0,
+
+
+      }
+      
+    }
+    animate={{
+      x:0,
+
+      opacity:1,
+      
+    }}
+    transition={{
+      duration:.5,
+      ease:'easeIn'
+    }} style={
+      {
+        background:
+        "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
+        width:'100%',
+        height:'1000px',
+        padding:'20px 5%',
+        display:'flex',
+        flexDirection:'column',
+        gap:'20px'
+        ,alignItems:'center',
+        justifyContent:'space-evenly',
+    
+        textAlign:'center'
+      }
+    }>
+    <Box sx={{
+      borderRadius:'50px',
+     backgroundColor:'rgba(18,18,18,.7)',
+      display:'flex',
+      flexDirection:'column',
+      gap:'20px'
+      ,alignItems:'center',
+      
+      justifyContent:'space-around',
+      width:'900px',
+      textAlign:'center'
+    }}  height={500}>
+      <Typography variant='h3'  color={'secondary'}>pls Register </Typography>
+      <TextField sx={{
+        color:'white'
+      }}  size='medium'  label='enter your userName' variant='outlined' color='success' />
+      <TextField size='medium'   variant='filled' color='success' label='enter your password'/>
+      <Button variant='contained' color='secondary' >Submit</Button>
+      <h3 style={{
+        color:'white',
+        cursor:'pointer',
+      
+      }} onClick={handlePageType}> you've already have an account? let's Login</h3>
+    </Box>
+    </motion.div>
   )
 }

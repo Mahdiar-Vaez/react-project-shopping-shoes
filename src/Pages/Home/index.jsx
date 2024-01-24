@@ -9,8 +9,9 @@ import {
   Stack,
   Icon,
 } from "@mui/material";
+import {motion} from 'framer-motion'
 import "./style.css";
-import React from "react";
+import React, { useRef } from "react";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import AddReactionIcon from "@mui/icons-material/AddReaction";
