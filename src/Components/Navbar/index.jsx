@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Stack,
   Toolbar,
@@ -12,15 +12,13 @@ import HomeIcon from "@mui/icons-material/Home";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import { Link } from "react-router-dom";
+import AuthContext from "../../utils/AuthContext";
+import { motion } from "framer-motion";
 export default function Navbar() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const { token, handleToken } = useContext(AuthContext);
+  {      console.log(token);}
+
+
   return (
     <AppBar
       sx={{
@@ -100,41 +98,40 @@ export default function Navbar() {
             </Button>
           </Link>
         </Stack>
-        <Stack direction={"row"} spacing={3}>
-          <Button
-            id="fade-button"
-            aria-controls={open ? "fade-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-            variant="outlined"
-            sx={{
-              fontWeight: "800",
-            }}
-            color="primary"
-          >
-            Login/Register
-          </Button>
-          <Menu
-            id="fade-menu"
-            MenuListProps={{
-              "aria-labelledby": "fade-button",
-            }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-          >
-            <Link to={"/login-register"}>
-              <MenuItem onClick={handleClose}>Register</MenuItem>
-            </Link>
-            <Link to={"/login-register"}>
-              {" "}
-              <MenuItem onClick={handleClose}>Login</MenuItem>
-            </Link>
-          </Menu>
+        <Stack  direction={"row"} spacing={3}>
+          {token? (
+            <Button
+              variant="outlined"
+              sx={{
+                fontWeight: "800",
+              }}
+              color="error"
+              onClick={()=>handleToken(null)}
+            >
+              <span>LogOut</span>
+              
+            </Button>
+          ) : (
+           <Button 
+                id="fade-button"
+                variant="outlined"
+                sx={{
+                  fontWeight: "800",
+                }}
+                color="primary"
+              >
+                 <Link to={'/login-register'}>  Login/Register </Link>
+              
+              </Button>
+              
+           
+        
+          )}
         </Stack>
       </Toolbar>
     </AppBar>
+
   );
+
 }
+
