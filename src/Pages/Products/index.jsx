@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect,useState } from "react";
 import Card from "@mui/material/Card";
-import "./style.css";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
+import './style.css'
 import { MoonLoader } from "react-spinners";
 
 export default function Products() {
+  console.log()
   const [products, setProducts] = useState();
   useEffect(() => {
     fetch(
@@ -33,9 +33,9 @@ export default function Products() {
         style={{
           textDecoration: "none",
         }}
-        to={`/products/${e?.id}/${e?.name.split(" ").join("-")}`}
+        to={`/product-details/${e?.id}/${e?.name.split(" ").join("-")}`}
       >
-        {" "}
+      
         <Card
           sx={{
             maxWidth: 345,
@@ -70,7 +70,7 @@ export default function Products() {
             </CardContent>
           </CardActionArea>
         </Card>
-      </Link>
+       </Link>
     );
   });
   return (

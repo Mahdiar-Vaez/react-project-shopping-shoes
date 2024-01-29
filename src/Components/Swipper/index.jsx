@@ -1,58 +1,77 @@
 
+import React, { useEffect, useRef, useState } from 'react';
+// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useSelector ,useDispatch} from 'react-redux';
-import { addItem,removeItem } from '../../Store/Slice/CartSlice';
+
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
 
-import './style.css'
+import './styles.css';
 
+// import required modules
+import { EffectCube, Pagination } from 'swiper/modules';
+import { Box, Typography } from '@mui/material';
 
-import { Navigation, Pagination } from 'swiper/modules';
+export default function Swipper({name,brandName,price,description,img,imgII,imgIII}) {
+  const divDes=useRef()
+  useEffect(()=>{
+    description==undefined?
+    divDes.current.innerHTML='...':
+    divDes.current.innerHTML=`${description}`
+  },[description])
+    return (
 
-
-  
-export default function App({img,imgII,imgIII,name,price,id,product}) {
-  const dispatch=useDispatch()
-  const pr=useSelector(state=>state.cart.list).filter(e=>e.id==id)
-  console.log(pr)
-  const quantity=pr[0]?.quantity
-  console.log(quantity)
-   return (
-    <>
-   
-      <Swiper
-        dir="rtl"
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Navigation, Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <div> <img src={'https://'+img} alt={name} /></div>
-       
-        </SwiperSlide>
-        <SwiperSlide>   <div> <img src={'https://'+imgII} alt={name} /></div></SwiperSlide>
-        <SwiperSlide>   <div> <img src={'https://'+imgIII} alt={name} /></div></SwiperSlide>
-      </Swiper>
-      <div className='text-content'>
-      <h3>{name}</h3>
-       
-        <h4>{price}</h4>
-        <div className='cart-btn'>
-        <button className='btn btn-danger ' disabled={
-          quantity?false:true
-        } onClick={()=>dispatch(removeItem(product?.id))}>-</button>
-        {quantity&&<span>{quantity}</span>}
-        <button className='btn btn-success ' onClick={()=>dispatch(addItem(product))}>+</button>
+    <div className='swiper-holder'>
+    <Swiper
+      effect={'cube'}
+      grabCursor={true}
+      cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      }}
+      pagination={true}
+      modules={[EffectCube, Pagination]}
+      className="mySwiper"
+    >
+      <SwiperSlide>
+        <img src={'https://'+img} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={"https://"+imgII} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={"https://"+imgIII} />
+      </SwiperSlide>
+    </Swiper>
+    <Box  height={700} sx={{
+        padding:'10px',
+        width:'100%'
+    }}>
+        <Typography color='primary' fontWeight={900} variant='h3'>
+            {name}
+        </Typography>
+        <Typography color={'primary'} variant='subtitle1'>
+            {brandName}
+        </Typography>
+        <div style={{
+            visibility:description?'visible':'hidden',
+            color:'white',
+            textAlign:'center'
+        }} ref={divDes} color={'primary'} variant='body2'>
+           
         </div>
-       
-        
-      </div>
-    </>
-  );
+        <span id='price' >{price}</span>
+    </Box>
+  </div>
+
+
+
+  )
 }
+
+
+   

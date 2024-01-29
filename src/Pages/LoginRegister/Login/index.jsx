@@ -1,13 +1,13 @@
 import { Box, TextField, Typography, Button } from "@mui/material";
-import { color, motion } from "framer-motion";
-import React, { useContext, useRef, useState } from "react";
+import {  motion } from "framer-motion";
+import React, { useContext  } from "react";
 import useFormFields from "../../../utils/useFormFields";
 import AuthContext from "../../../utils/AuthContext";
 
 export default function Login({ handlePageType }) {
-  const [fields, handleChange] = useFormFields("successfully");
-  const { handleToken } = useContext(AuthContext);
-
+  const [fields, handleChange] = useFormFields();
+  const { token,handleToken } = useContext(AuthContext);
+console.log(token)
   const handleClick = () => {
     fetch("https://fakestoreapi.com/auth/login", {
       method: "POST",
