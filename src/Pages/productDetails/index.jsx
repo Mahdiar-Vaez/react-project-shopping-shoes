@@ -22,7 +22,7 @@ export default function ProductDetails() {
   },[id])
   return (
     <Box height={1000}>
-    <Swipper name={product?.name} brandName={product?.brand?.name} price={product?.price?.current?.text} description={product?.brand?.description} img={product?.media?.images[0]?.url} imgII={product?.media?.images[1]?.url} imgIII={product?.media?.images[2]?.url}/>
+    <Swipper product={product} name={product?.name} id={product?.id} brandName={product?.brand?.name} price={product?.price?.current?.text} description={product?.brand?.description} img={product?.media?.images[0]?.url} imgII={product?.media?.images[1]?.url} imgIII={product?.media?.images[2]?.url}/>
     </Box>
   )
 }

@@ -10,6 +10,7 @@ import LoginRegister from './Pages/LoginRegister'
 import ProductDetails from './Pages/productDetails'
 import PageNotFound from './Pages/404'
 import Contact from './Pages/Contact/Contact'
+import Cart from './Components/Cart'
 export default function App() {
   const [token,setToken]=useState(true)
   const handleToken=(x)=>{
@@ -27,6 +28,7 @@ export default function App() {
         <Route path='/login-register' element={token?<Navigate to={'/'}/>:<LoginRegister/>} />
         <Route path='/product-details/:id/:name' element={token?<ProductDetails/>:<Navigate to={'/login-register'}/>}/>
         <Route path='*'  element={<PageNotFound/>}/>
+        <Route path='/cart' element={ token? <Cart/>:<Navigate to={'/login-register'}/>}/>
         </Routes>
        
        

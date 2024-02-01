@@ -67,8 +67,10 @@ export default function Home() {
             debitis laboriosam cumque!
           </Typography>
         </Box>
-        <Box p={5} sx={{}}>
-          <img width={800} height={500} src="assets/SHOESvECTOR.jpg" />
+        <Box p={5} sx={{
+          
+        }}>
+          <img sx height={500} src="assets/SHOESvECTOR.jpg" />
         </Box>
       </Box>
       <Typography my={5} fontWeight={900} color={"secondary"} textAlign={"center"} variant="h2">

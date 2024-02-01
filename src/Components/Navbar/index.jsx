@@ -7,6 +7,7 @@ import {
   Button,
   MenuItem,
   Fade,
+  Badge,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
@@ -14,9 +15,12 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import { Link } from "react-router-dom";
 import AuthContext from "../../utils/AuthContext";
 import { motion } from "framer-motion";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useSelector } from "react-redux";
 export default function Navbar() {
   const { token, handleToken } = useContext(AuthContext);
   {      console.log(token);}
+  const productNum=useSelector(state=>state.cart.list).length
 
 
   return (
@@ -65,7 +69,7 @@ export default function Navbar() {
                 height: "50px",
               }}
               size="small"
-              color="secondary"
+              color="primary"
             >
               Home
             </Button>
@@ -78,7 +82,7 @@ export default function Navbar() {
               }}
               size="small"
               variant="text"
-              color="secondary"
+              color="primary"
             >
               Contact
             </Button>
@@ -92,7 +96,7 @@ export default function Navbar() {
               }}
               size="small"
               variant="text"
-              color="secondary"
+              color="primary"
             >
               Products
             </Button>
@@ -127,7 +131,11 @@ export default function Navbar() {
            
         
           )}
+          <Link to={'/cart'}>         <Badge anchorOriginTopRight badgeContent={productNum} color="error"  overlap="circular"  variant="standard">  <Button  variant="contained"  endIcon={<ShoppingCartIcon fontSize="large"/>}>cart</Button></Badge>
+</Link>
+          
         </Stack>
+
       </Toolbar>
     </AppBar>
 

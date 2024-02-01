@@ -1,0 +1,33 @@
+.my-animation{
+    animation-name:myAnimate;
+    animation-duration: 10s;
+    animation-iteration-count:infinite ;
+
+}
+@keyframes myAnimate {
+25%{
+    transform: translateX(-50px);
+}
+50%{
+    transform: translateX(0);
+
+
+}
+75%{
+    transform: translateX(50px);
+}
+100%{
+    transform: translateX(0);
+}
+}
+.link-to-products{
+    color: red;
+}
+.link-to-products:hover{
+    color: purple;
+    text-decoration: none;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
