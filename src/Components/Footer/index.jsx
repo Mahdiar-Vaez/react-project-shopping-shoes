@@ -31,10 +31,10 @@ export default function Footer() {
           " linear-gradient(90deg, rgba(2,0,36,1) 10%, rgba(88,15,82,1) 54%)",
       }}
     >
-      <div
-        style={{
+      <Box
+        sx={{
           display: "flex",
-          
+          flexWrap:'wrap',
           flexDirection: "row",
           justifyContent: "space-between",
         }}
@@ -91,9 +91,10 @@ export default function Footer() {
         alignItems:'center',
         gap:'20px'
         }}>
-          <TextField sx={{
-            color:'white'
-          }} value={value} onChange={(e)=>setValue(e.target.value)}  color="secondary" variant="filled" label={'Enter your token '}/>
+          <TextField  sx={{
+            color:'white',
+           backgroundColor:'white'
+          }} value={value} onChange={(e)=>setValue(e.target.value)}  color="secondary"  variant="filled"  label={'Enter your token '}/>
           <Button onClick={handleFakeToken} color="secondary" variant="contained">Submit</Button>
           {!fakeToken&&<Typography  color={'error'}>Token not found</Typography>}
         </Box>
@@ -102,11 +103,13 @@ export default function Footer() {
           display:'flex',
           justifyContent:'space-evenly'
         }}>
-          <Box width={150}>
+          <Box sx={{
+            
+          }} width={100}>
             <List>
               <ListItem disablePadding>
                 <ListItemButton>
-                  <ListItemText primary="Contact Us" />
+                  <ListItemText  primary="Contact Us" />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
@@ -137,7 +140,7 @@ export default function Footer() {
               </ListItem>
             </List>
           </Box>
-          <Box width={150}>
+          <Box width={120}>
             <List>
               <ListItem disablePadding>
                 <ListItemButton>
@@ -156,7 +159,7 @@ export default function Footer() {
               </ListItem>
             </List>
           </Box>
-          <Box width={150}>
+          <Box width={100}>
             <List>
               <ListItem disablePadding>
                 <ListItemButton>
@@ -176,7 +179,7 @@ export default function Footer() {
             </List>
           </Box>
         </Box>
-      </div>
+      </Box>
     </footer>
   );
 }

@@ -23,43 +23,68 @@ export default function Home() {
     <main
       style={{
         marginTop: "100px",
-        padding: "80px 5%",
+        padding:'0 5%',
 
         backgroundColor: "rgb(18,18,18)",
       }}
     >
       <Box
         sx={{
+          flexDirection:{
+            xs:'column-reverse',
+            md:'column-reverse',
+            lg:'row'
+          },
+          alignItems:'center',
           width: "100%",
-          height: "600px",
+          height: "max-content",
           borderRadius: "30px",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           background:
             "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
         }}
       >
         <Box
-          height={500}
+          height={'max-content'}
           textAlign={"center"}
           sx={{
             width: "50%",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
+            
             justifyContent: "center",
           }}
-          p={5}
+          p={1}
         >
           <Typography
             color={"white"}
-            fontSize={"50px"}
+          
             fontWeight={900}
             variant="h3"
+            sx={{
+              fontSize:{
+                xs:'25px',
+                sm:'27px',
+                md:'29px',
+                lg:'31px',
+                xl:'33px'
+              }
+            }}
+            
           >
             Website for all shoes you need
           </Typography>
-          <Typography color={"white"} variant="body2">
+          <Typography sx={{
+            fontSize:{
+              xs:'15px',
+              sm:'17px',
+              md:'19px',
+              lg:'21px',
+              xl:'23px'
+            }
+          }} my={2} fontSize={20} color={"white"} variant="body2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
             ipsam nam placeat, ullam fugit unde molestiae laboriosam eligendi!
             Id in pariatur maiores magnam, quibusdam delectus! Ea ullam non
@@ -67,16 +92,39 @@ export default function Home() {
             debitis laboriosam cumque!
           </Typography>
         </Box>
-        <Box p={5} sx={{
+        <Box p={2} sx={{
           
         }}>
-          <img sx height={500} src="assets/SHOESvECTOR.jpg" />
+          <Box component={'img'} sx={{
+            maxWidth:{
+              xs:300,
+              sm:400,
+              md:500,
+              lg:600,
+                          }
+             
+          }}  src="assets/SHOESvECTOR.jpg" />
         </Box>
       </Box>
-      <Typography my={5} fontWeight={900} color={"secondary"} textAlign={"center"} variant="h2">
+      <Typography sx={{
+        fontSize:{  xs:'22px',
+          sm:'24px',
+          md:'26px',
+          lg:'28px',
+          xl:'30px'}
+        
+      }} my={5} fontWeight={900} color={"secondary"} textAlign={"center"} variant="h2">
         Our Great Features
       </Typography>
       <Typography
+      sx={{
+        fontSize:{  xs:'22px',
+        sm:'24px',
+        md:'26px',
+        lg:'28px',
+        xl:'30px'}
+      
+      }}
         my={5}
         color={"secondary"}
         textAlign={"center"}
@@ -86,16 +134,21 @@ export default function Home() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
         placeat at, ut minus unde a!
       </Typography>
-      <div
-        style={{
+      <Box
+        sx={{
           padding: "50px 5%",
           display: "flex",
-          flexDirection: "row",
+          flexDirection: {
+            xs:'column',
+            lg:'row'
+          },
           justifyContent: "space-evenly",
           alignItems: "center",
+          
           position: "relative",
           width: "100%",
-          height: "500px",
+          height: "max-content",
+          gap:'10px'
         }}
         className="cards"
       >
@@ -112,7 +165,11 @@ export default function Home() {
         >
           <Card
             sx={{
-              maxWidth: 345,
+              maxWidth: {
+                xs:"80%",
+                sm:'70%',
+                md:345
+              },
               background:
                 "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
             }}
@@ -128,11 +185,28 @@ export default function Home() {
                 color={"white"}
                 gutterBottom
                 variant="h5"
+                sx={{
+                  fontSize:{
+                    xs:'25px',
+                    sm:'27px',
+                    md:'29px',
+                    lg:'31px',
+                    xl:'33px'
+                  }
+                }}
                 component="div"
               >
                 Save times
               </Typography>
-              <Typography textAlign={"center"} variant="body2" color="white">
+              <Typography sx={{
+                  fontSize:{
+                    xs:'15px',
+                    sm:'17px',
+                    md:'19px',
+                    lg:'21px',
+                    xl:'23px'
+                  }
+              }} textAlign={"center"} variant="body2" color="white">
                 Lizards are a widespread group of squamate reptiles, with over
                 6,000 species, ranging across all continents except Antarctica
               </Typography>
@@ -148,7 +222,11 @@ export default function Home() {
           </Card>
           <Card
             sx={{
-              maxWidth: 345,
+              maxWidth: {
+                xs:"80%",
+                sm:'70%',
+                md:345
+              },
               background:
                 "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
             }}
@@ -165,10 +243,28 @@ export default function Home() {
                 gutterBottom
                 variant="h5"
                 component="div"
+                sx={{
+                  fontSize:{
+                    xs:'25px',
+                    sm:'27px',
+                    md:'29px',
+                    lg:'31px',
+                    xl:'33px'
+                  }
+                }}
               >
                 User friendly
               </Typography>
-              <Typography textAlign={"center"} variant="body2" color="white">
+              <Typography 
+                    sx={{
+                      fontSize:{
+                        xs:'15px',
+                        sm:'17px',
+                        md:'19px',
+                        lg:'21px',
+                        xl:'23px'
+                      }
+                    }} textAlign={"center"} variant="body2" color="white">
                 Lizards are a widespread group of squamate reptiles, with over
                 6,000 species, ranging across all continents except Antarctica
               </Typography>
@@ -186,11 +282,18 @@ export default function Home() {
         <Box
           sx={{
             zIndex: "2",
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center'
           }}
         >
           <Card
             sx={{
-              maxWidth: 345,
+              maxWidth: {
+                xs:"80%",
+                sm:'70%',
+                md:345
+              },
               display: "flex",
               flexDirection: "column-reverse",
               background:
@@ -221,11 +324,28 @@ export default function Home() {
                 color={"white"}
                 gutterBottom
                 variant="h5"
+                sx={{
+                  fontSize:{
+                    xs:'25px',
+                    sm:'27px',
+                    md:'29px',
+                    lg:'31px',
+                    xl:'33px'
+                  }
+                }}
                 component="div"
               >
                 iOS & Android App
               </Typography>
-              <Typography textAlign={"center"} variant="body2" color="white">
+              <Typography   sx={{
+                fontSize:{
+                   xs:'15px',
+                        sm:'17px',
+                        md:'19px',
+                        lg:'21px',
+                        xl:'23px'
+                }
+              }}   textAlign={"center"} variant="body2" color="white">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Maiores, unde!
               </Typography>
@@ -244,7 +364,12 @@ export default function Home() {
         >
           <Card
             sx={{
-              maxWidth: 345,
+              maxWidth: {
+                xs:"80%",
+                sm:'70%',
+                md:345
+              },
+
               background:
                 "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
             }}
@@ -256,6 +381,15 @@ export default function Home() {
                 fontSize="large"
               />
               <Typography
+                   sx={{
+                    fontSize:{
+                      xs:'25px',
+                      sm:'27px',
+                      md:'29px',
+                      lg:'31px',
+                      xl:'33px'
+                    }
+                  }}
                 textAlign={"center"}
                 color={"white"}
                 gutterBottom
@@ -264,7 +398,16 @@ export default function Home() {
               >
                 Fast Delivery
               </Typography>
-              <Typography textAlign={"center"} variant="body2" color="white">
+              <Typography sx={{
+                 fontSize:{
+                  xs:'15px',
+                       sm:'17px',
+                       md:'19px',
+                       lg:'21px',
+                       xl:'23px'
+               }
+            
+              }} textAlign={"center"} variant="body2" color="white">
                 Lizards are a widespread group of squamate reptiles, with over
                 6,000 species, ranging across all continents except Antarctica
               </Typography>
@@ -280,7 +423,11 @@ export default function Home() {
           </Card>
           <Card
             sx={{
-              maxWidth: 345,
+              maxWidth: {
+                xs:"80%",
+                sm:'70%',
+                md:345
+              },
               background:
                 "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
             }}
@@ -292,6 +439,15 @@ export default function Home() {
                 fontSize="large"
               />
               <Typography
+                    sx={{
+                      fontSize:{
+                        xs:'25px',
+                        sm:'27px',
+                        md:'29px',
+                        lg:'31px',
+                        xl:'33px'
+                      }
+                    }}
                 textAlign={"center"}
                 color={"white"}
                 gutterBottom
@@ -300,7 +456,16 @@ export default function Home() {
               >
                 Warranty for all
               </Typography>
-              <Typography textAlign={"center"} variant="body2" color="white">
+              <Typography  sx={{
+                 fontSize:{
+                  xs:'15px',
+                       sm:'17px',
+                       md:'19px',
+                       lg:'21px',
+                       xl:'23px'
+               }
+            
+              }} textAlign={"center"} variant="body2" color="white">
                 Lizards are a widespread group of squamate reptiles, with over
                 6,000 species, ranging across all continents except Antarctica
               </Typography>
@@ -315,25 +480,37 @@ export default function Home() {
             </CardActions>
           </Card>
         </Box>
-      </div>
-      <div
-        style={{
+      </Box>
+      <Box
+        sx={{
           marginTop: "40px",
           width: "100%",
           display:'flex',
-          justifyContent:'space-between',
+          flexDirection:{
+            xs:'column',
+            lg:'row'
+          },
+          justifyContent:{
+            xs:'center',
+            lg:'space-between'
+          },
           alignItems:'center',
           gap:'40px'
         }}
       >
         <Box
           sx={{
-            width: "50%",
+            width: "55%",
           }}
         >
-          <img
-            style={{
-              maxWidth: "600px",
+          <Box
+          component={'img'}
+            sx={{
+              maxWidth:{
+                xs:250,
+                sm:200,
+                lg:600
+              },
             }}
             src="assets/backGrrond.png"
             alt=""
@@ -345,7 +522,15 @@ export default function Home() {
           justifyContent:'center'
           ,gap:'10px'
         }}>
-          <Typography fontWeight={900} color={"secondary"} variant="h3">
+          <Typography sx={{
+            fontSize:{
+              xs:'25px',
+              sm:'27px',
+              md:'29px',
+              lg:'31px',
+              xl:'33px'
+            }
+          }} fontWeight={900} color={"secondary"} variant="h3">
             Unified product catalog
           </Typography>
 
@@ -400,22 +585,23 @@ export default function Home() {
         </Box>
       
        
-      </div>
-      <div>
+      </Box>
+      <Box>
        
-        <Typography my={10} textAlign={'center'} variant="h3" fontWeight={900}>Trusted by worldwide largest companies</Typography>
+        <Typography my={10} textAlign={'center'} variant="h5" fontWeight={900}>Trusted by worldwide largest companies</Typography>
       
-        <div style={{
+        <Box sx={{
           display:'flex',
           justifyContent:'space-evenly'
+          ,flexWrap:'wrap'
         }} className="companies">
-        <img loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e93_4.png" alt=""/>
-        <img width="240" loading="lazy" alt="" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e91_2.png"/>
-        <img loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e94_2-1.png" alt=""/>
-        <img loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e92_3.png" alt=""/>
-        <img loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e90_1.png" alt=""/>
-        </div>
-      </div>
+        <img  width="100"  loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e93_4.png" alt=""/>
+        <img width="100" loading="lazy" alt="" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e91_2.png"/>
+        <img   width="100" loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e94_2-1.png" alt=""/>
+        <img  width="100" loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e92_3.png" alt=""/>
+        <img  width="100" loading="lazy" src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a145bf5d6be8380af14e90_1.png" alt=""/>
+        </Box>
+      </Box>
     </main>
   );
 }
