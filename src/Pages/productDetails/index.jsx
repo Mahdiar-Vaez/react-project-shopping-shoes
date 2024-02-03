@@ -12,7 +12,7 @@ export default function ProductDetails() {
       {
         headers: {
           "X-RapidAPI-Key":
-            "8de00fcc82msh1a5fc2bed05e452p1a5212jsnb2271d0a1bed",
+          '0a53ca561bmshbc8be0d9402ac79p1797f2jsn43c1c602b353',
           "X-RapidAPI-Host": "asos2.p.rapidapi.com",
         },
       }

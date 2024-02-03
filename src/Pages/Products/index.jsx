@@ -16,8 +16,7 @@ export default function Products() {
       "https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=4209&limit=48&country=US&sort=freshness&currency=USD&sizeSchema=US&lang=en-US",
       {
         headers: {
-          "X-RapidAPI-Key":
-            "8de00fcc82msh1a5fc2bed05e452p1a5212jsnb2271d0a1bed",
+          "X-RapidAPI-Key": '0a53ca561bmshbc8be0d9402ac79p1797f2jsn43c1c602b353',
           "X-RapidAPI-Host": "asos2.p.rapidapi.com",
         },
       }
@@ -38,7 +37,18 @@ export default function Products() {
       
         <Card
           sx={{
-            maxWidth: 345,
+            maxWidth:{
+              xs:150,md:300
+            },
+            height:{
+              xs:305,
+              sm:350,
+              md:420
+
+            },
+            marginTop:{
+              xs:10
+            },
             background:
               "linear-gradient(72.3deg, rgb(29, 7, 64) 8.5%, rgb(253, 105, 139) 92.2%)",
             padding: "20px",
@@ -48,7 +58,12 @@ export default function Products() {
             <CardMedia
               key={index}
               component="img"
-              height="350"
+              sx={{
+                height:{
+                  xs:155,sm:100,
+                  md:200
+                }
+              }}
               image={"https://" + e?.imageUrl}
               alt={e?.brandName}
             />
@@ -57,6 +72,15 @@ export default function Products() {
                 color={"white"}
                 gutterBottom
                 variant="h5"
+                sx={{
+                  fontSize:{
+                    xs:12,
+                    sm:15,
+                    md:18,
+                    lg:20,
+                    xl:22
+                  }
+                }}
                 component="div"
               >
                 {e?.name}
@@ -81,7 +105,7 @@ export default function Products() {
         padding: "20px 5%",
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
         gap: "30px",
         width: "100%",
@@ -89,6 +113,14 @@ export default function Products() {
       }}
     >
       {products ? <>{items}</> : <div className="loader-div"><MoonLoader  color='rgba(36, 13, 244, 1)' /></div>}
+   
     </Box>
   );
 }
+// headers
+// "X-RapidA?I-Key':
+// 'X-RapidAPI-Host
+// Exampie Responses
+// O Copy Code
+// 'e1f29039ecmshb084fd5638045eap10ba27jsn7ca73a1a0fBb',
+// 'asos2.p.rapidapi.com'

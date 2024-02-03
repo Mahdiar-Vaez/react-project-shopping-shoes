@@ -61,7 +61,11 @@ console.log(token)
       >
         <Box
           sx={{
-            borderRadius: "50px",
+            borderRadius: {
+              xs:5,
+              sm:10,
+              md:30
+            },
             backgroundColor: "rgba(18,18,18,.7)",
             display: "flex",
             flexDirection: "column",
@@ -69,7 +73,11 @@ console.log(token)
             alignItems: "center",
 
             justifyContent: "space-around",
-            width: "900px",
+            width: {
+              xs:300,
+              sm:350,
+              md:600
+            },
             textAlign: "center",
           }}
           height={500}

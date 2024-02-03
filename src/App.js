@@ -30,8 +30,6 @@ export default function App() {
         <Route path='*'  element={<PageNotFound/>}/>
         <Route path='/cart' element={ token? <Cart/>:<Navigate to={'/login-register'}/>}/>
         </Routes>
-       
-       
        <Footer/>
     </AuthContext.Provider>
   

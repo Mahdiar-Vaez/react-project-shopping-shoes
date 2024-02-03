@@ -43,23 +43,50 @@ export default function Swipper({name,id,brandName,price,description,img,imgII,i
       className="mySwiper"
     >
       <SwiperSlide>
-        <img src={'https://'+img} />
+        <Box  sx={{
+          maxWidth:{
+            xs:250,
+            sm:275,
+            md:400
+          }
+        }}  component={'img'} src={'https://'+img} />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={"https://"+imgII} />
+        <Box  sx={{
+          maxWidth:{
+            xs:250,
+            sm:300,
+            md:400
+          }
+        }} component={'img'} src={"https://"+imgII} />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={"https://"+imgIII} />
+        <Box sx={{
+          maxWidth:{
+            xs:250,
+            sm:275,
+            md:400
+          }
+        }}  component={'img'} src={"https://"+imgIII} />
       </SwiperSlide>
     </Swiper>
     <Box  height={700} sx={{
         padding:'10px',
         width:'100%'
     }}>
-        <Typography color='primary' fontWeight={900} variant='h3'>
+        <Typography   sx={{
+              fontSize:{
+                xs:'25px',
+                sm:'27px',
+                md:'29px',
+                lg:'31px',
+                xl:'33px'
+              }
+            }}
+             color='primary' fontWeight={900} variant='h3'>
             {name}
         </Typography>
-        <Typography color={'primary'} variant='subtitle1'>
+        <Typography  color={'primary'} variant='subtitle1'>
             {brandName}
         </Typography>
         <div style={{

@@ -35,8 +35,13 @@ export default function Footer() {
         sx={{
           display: "flex",
           flexWrap:'wrap',
+          alignItems:'center',
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: {
+            xs:'center',
+            md:'space-between'
+          },
+          gap:'20px'
         }}
       >
         <Box

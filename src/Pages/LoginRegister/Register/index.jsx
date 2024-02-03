@@ -39,18 +39,28 @@ export default function Register({handlePageType}) {
         textAlign:'center'
       }
     }>
-    <Box sx={{
-      borderRadius:'50px',
-     backgroundColor:'rgba(18,18,18,.7)',
-      display:'flex',
-      flexDirection:'column',
-      gap:'20px'
-      ,alignItems:'center',
-      
-      justifyContent:'space-around',
-      width:'900px',
-      textAlign:'center'
-    }}  height={500}>
+    <Box  sx={{
+            borderRadius: {
+              xs:5,
+              sm:10,
+              md:30
+            },
+            backgroundColor: "rgba(18,18,18,.7)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+            alignItems: "center",
+
+            justifyContent: "space-around",
+            width: {
+              xs:300,
+              sm:350,
+              md:600,
+              lg:1200
+            },
+            textAlign: "center",
+          }}
+          height={600}>
       <Typography variant='h3'  color={'secondary'}>pls Register </Typography>
       <TextField sx={{
         color:'white'

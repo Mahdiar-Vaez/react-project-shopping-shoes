@@ -3,6 +3,7 @@ import { Box, Paper, Stack, Typography } from "@mui/material";
 import CampaignIcon from "@mui/icons-material/Campaign";
 import Groups2Icon from '@mui/icons-material/Groups2';
 import BackHandIcon from '@mui/icons-material/BackHand';
+import { motion } from "framer-motion";
 export default function Contact() {
   return (
     <Box
@@ -10,20 +11,63 @@ export default function Contact() {
         backgroundColor: "rgb(18,18,18)",
         width: "100%",
         height: "max-content",
-        marginTop: "100px",
+        marginTop:{
+          xs:18,
+          md:10
+        },
+        
+        
         padding: "5% 5%",
       }}
     >
-      <Typography
+      <Typography component={motion.h3}
+      initial={{
+        x:1000,
+        opacity:0,
+        visibility:'hidden',
+        scale:0}}
+        animate={{
+          x:0,
+          opacity:1,
+          visibility:'visible',
+          scale:1
+        }}
+        transition={{
+          duration:.9
+        }}
         color={"secondary"}
         p={3}
+        sx={{
+          fontSize:{
+            xs:'25px',
+            sm:'27px',
+            md:'29px',
+            lg:'31px',
+            xl:'33px'
+          }
+       ,
+        }}
         fontFamily={"fantasy"}
         textAlign={"center"}
         variant="h3"
       >
         The Shoes you really need
       </Typography>
-      <Typography
+      <Typography component={motion.p}
+       initial={{
+        
+        opacity:0,
+        visibility:'hidden',
+        scale:0}}
+        animate={{
+         
+          opacity:1,
+          visibility:'visible',
+          scale:1
+        }}
+        transition={{
+          duration:.9
+        }}
         fontSize={20}
         color={"white"}
         textAlign={"center"}
@@ -43,7 +87,21 @@ export default function Contact() {
           gap: "20px",
         }}
       >
-        <Box
+        <Box  component={motion.div}
+         initial={{
+          
+          opacity:0,
+          visibility:'hidden',
+          scale:0}}
+          whileInView={{
+            x:0,
+            opacity:1,
+            visibility:'visible',
+            scale:1
+          }}
+          transition={{
+            duration:.9
+          }}
           sx={{
             width: "350px",
             height: "400px",
@@ -71,7 +129,21 @@ export default function Contact() {
             We’re here for you 24/7 including holidays and more
           </Typography>
         </Box>
-        <Box
+        <Box  component={motion.div}
+         initial={{
+          
+          opacity:0,
+          visibility:'hidden',
+          scale:0}}
+          whileInView={{
+            x:0,
+            opacity:1,
+            visibility:'visible',
+            scale:1
+          }}
+          transition={{
+            duration:.9
+          }}
           sx={{
             width: "350px",
             height: "400px",
@@ -99,7 +171,21 @@ export default function Contact() {
             Go beyond the MRR and ARR indicators and discover more.
           </Typography>
         </Box>
-        <Box
+        <Box  component={motion.div}
+         initial={{
+          
+          opacity:0,
+          visibility:'hidden',
+          scale:0}}
+          whileInView={{
+            x:0,
+            opacity:1,
+            visibility:'visible',
+            scale:1
+          }}
+          transition={{
+            duration:.9
+          }}
           sx={{
             width: "350px",
             height: "400px",
@@ -147,7 +233,21 @@ export default function Contact() {
           flexWrap:'wrap',
           justifyContent:'space-evenly'
         }}>
-          <Stack  width={300} direction={"column"}>
+          <Stack  component={motion.div}
+         initial={{
+          
+          opacity:0,
+          visibility:'hidden',
+          scale:0}}
+          whileInView={{
+            x:0,
+            opacity:1,
+            visibility:'visible',
+            scale:1
+          }}
+          transition={{
+            duration:1
+          }}  width={300} direction={"column"}>
             <CampaignIcon color={'secondary'} fontSize="large" />
             <Typography color={'secondary'} fontWeight={700} variant="body2" fontSize={15}>
               Your pinion counts
@@ -157,7 +257,21 @@ export default function Contact() {
               productively.
             </Typography>
           </Stack>
-          <Stack  width={300} direction={"column"}>
+          <Stack  component={motion.div}
+         initial={{
+          
+          opacity:0,
+          visibility:'hidden',
+          scale:0}}
+          whileInView={{
+            x:0,
+            opacity:1,
+            visibility:'visible',
+            scale:1
+          }}
+          transition={{
+            duration:1.5
+          }}  width={300} direction={"column"}>
             <Groups2Icon color={'secondary'} fontSize="large" />
             <Typography color={'secondary'} fontWeight={700} variant="body2" fontSize={15}>
             Teamwork
@@ -166,7 +280,21 @@ export default function Contact() {
             Work together with your team and your suppliers effectively & productively.
             </Typography>
           </Stack>
-          <Stack  width={300} direction={"column"}>
+          <Stack  component={motion.div}
+         initial={{
+          
+          opacity:0,
+          visibility:'hidden',
+          scale:0}}
+          whileInView={{
+            x:0,
+            opacity:1,
+            visibility:'visible',
+            scale:1
+          }}
+          transition={{
+            duration:.9
+          }}  width={300} direction={"column"}>
             <BackHandIcon color={'secondary'} fontSize="large" />
             <Typography color={'secondary'} fontWeight={700} variant="body2" fontSize={15}>
             Teamwork
