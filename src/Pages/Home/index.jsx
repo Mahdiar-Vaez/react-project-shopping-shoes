@@ -626,13 +626,13 @@ export default function Home() {
         >
           <Box
             initial={{
-              x: 1000,
+            
               opacity: 0,
               visibility: "hidden",
               scale: 0,
             }}
             whileInView={{
-              x: 0,
+ 
               opacity: 1,
               visibility: "visible",
               scale: 1,

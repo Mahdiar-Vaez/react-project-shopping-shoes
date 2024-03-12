@@ -10,9 +10,12 @@
     background-color: rgb(18, 18, 28);
 }
 .swiper {
-    width: 500px;
-    height: 600px;
-   
+    width: 300px;
+    height: 300px;
+   display: flex;
+   justify-content: center !important;
+   align-items: center !important;
+   flex-direction: column;
    
   }
   
@@ -27,6 +30,7 @@
     display: block;
     height: 80%;
     width: 100%;
+    object-fit: contain;
   }
 #price{
     font-size: 2em;

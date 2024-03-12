@@ -29,7 +29,10 @@ export default function Swipper({name,id,brandName,price,description,img,imgII,i
     return (
 
     <div className='swiper-holder'>
-    <Swiper
+    <Swiper style={{
+      display:'flex',
+      justifyContent:'center',alignItems:'center'
+    }}
       effect={'cube'}
       grabCursor={true}
       cubeEffect={{
