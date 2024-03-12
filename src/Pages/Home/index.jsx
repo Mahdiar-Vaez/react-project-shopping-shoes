@@ -52,12 +52,12 @@ export default function Home() {
       >
         <Box
           initial={{
-            x: -1000,
+         
             opacity: 0,
             visibility: 0,
             scale: 0,
           }}
-          animate={{ x: 0, opacity: 1, visibility: "visible", scale: 1 }}
+          animate={{opacity: 1, visibility: "visible", scale: 1 }}
           transition={{
             duration: 1,
             ease: "easeIn",
@@ -116,7 +116,7 @@ export default function Home() {
         <Box p={2} sx={{}}>
           <Box
             initial={{
-              x: -1000,
+        
               opacity: 0,
               visibility: 0,
               scale: 0,
@@ -142,7 +142,7 @@ export default function Home() {
       <Typography
         component={motion.h2}
         initial={{
-          x: 1000,
+       
           opacity: 0,
           visibility: "hidden",
           scale: 0,

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import {
   Stack,
@@ -19,6 +19,8 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../utils/AuthContext";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
+import FormDialog from "./Dialog";
+import DialogForm from "./Dialog";
 export default function Navbar() {
   const { token, handleToken } = useContext(AuthContext);
   {
@@ -29,14 +31,13 @@ export default function Navbar() {
   const handleDrawer = () => {
     setIsDrawerTrue(true);
   };
+  
   return (
     <>
+ 
       <Drawer
         sx={{
-          display: {
-            xs: "block",
-            md: "none",
-          },
+        
           right: "20%",
         }}
         onEnded={true}
@@ -155,9 +156,15 @@ export default function Navbar() {
           >
             <Link to={"/"}>
               {" "}
-              <img
+              <Box  component={'img'} width={200} 
+              sx={{
+                height:'20px',
+                width:{
+                  xs:'100px !important'
+                }
+              }}
                 src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a1470ac08eb8a4ac31bca4_Logo.png"
-                alt=""
+                alt="logo"
                 class="logo"
               />
             </Link>
@@ -269,7 +276,10 @@ export default function Navbar() {
           alignItems:'center'
         }}>
         <Box 
-        
+          sx={{
+            objectFit:'contain',
+            width:100
+          }}
           component={"img"}
           src="https://assets-global.website-files.com/65a145bf5d6be8380af14e40/65a1470ac08eb8a4ac31bca4_Logo.png"
         />
@@ -294,9 +304,10 @@ export default function Navbar() {
                   cart
                 </Button>
               </Badge>
-            </Link>
+            </Link> 
+            <DialogForm/>
       </Box>
-      
+     
     </>
   );
 }
