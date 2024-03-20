@@ -6,7 +6,7 @@ this repository is  here to show my skills
 
 ## The link of the project
 
- - [vaez shopping shoes](https://65f4bd70e038543017bf449a--legendary-conkies-f181aa.netlify.app/)
+ - [vaez shopping shoes](https://legendary-conkies-f181aa.netlify.app)
 ## LOG OUT AND LOGIN 
    username: "mor_2314",
    password: "83r5^_"
